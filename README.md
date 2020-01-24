@@ -16,6 +16,16 @@ mvn clean install -DskipTests
 ```
 mvn spring-boot:run
 ```
+## Technologies
+Project is created with:
+* Java 11
+* Maven 3
+* Open Feign
+* Spring-boot
+* MySQL
+* Flyway
+
+
 ## Authors
 
 * **Guilherme Alves**
