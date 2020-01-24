@@ -1,0 +1,38 @@
+spring:
+  profiles:
+    active:
+    - prod
+  flyway:
+    enabled: false
+    url: jdbc:mysql://localhost:3306/place?useSSL=false&useTimezone=true&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    user: admin
+    password: 12345678
+    locations:
+      - classpath:db/migration/mysql
+    schemas:
+      - dili
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      dialect: org.hibernate.dialect.MySQL57InnoDBDialect
+      hibernate:
+        format_sql: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/place?useSSL=false&useTimezone=true&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: admin
+    password: 12345678
+    driver-class-name: com.mysql.jdbc.Driver
+    
+foursquare:
+  id: N5RKMW0SND4TG0ROIGBEQK5OZGZB2EPWQLTX05YWY0ZJ4YTX
+  secret: TIXAYKTY4NILY0W5TAY2IU4PK4XHG4Q2J5ZGSPLLCPQL0D4Y
+  version: 20180323
+  
+
+---
+spring:
+  profiles:
+    active:
+    - test
