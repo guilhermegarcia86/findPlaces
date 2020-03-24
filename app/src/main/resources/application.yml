@@ -55,10 +55,10 @@ spring:
       hibernate:
         format_sql: true
   datasource:
-    url: jdbc:mysql://localhost:3306/place?useSSL=false&useTimezone=true&serverTimezone=UTC&allowPublicKeyRetrieval=true
-    username: root
-    password: 12345678
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:db;DB_CLOSE_DELAY=-1
+    username: sa
+    password: sa
     
 foursquare:
   id: N5RKMW0SND4TG0ROIGBEQK5OZGZB2EPWQLTX05YWY0ZJ4YTX
