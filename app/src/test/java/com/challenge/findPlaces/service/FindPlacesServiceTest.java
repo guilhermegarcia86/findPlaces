@@ -12,6 +12,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 
 import com.challenge.findPlaces.client.FoursquareClient;
 import com.challenge.findPlaces.dto.CategorieDTO;
@@ -29,6 +30,7 @@ import com.challenge.findPlaces.repository.PlaceRepository;
 import com.challenge.findPlaces.vo.PlaceVO;
 
 @SpringBootTest
+@ActiveProfiles("test")
 public class FindPlacesServiceTest {
 
 	@InjectMocks
