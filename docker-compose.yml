@@ -1,0 +1,27 @@
+version: '3'
+services:
+  hk-mysql:
+    container_name: hk-mysql
+    image: mysql/mysql-server:5.7
+    environment:
+      MYSQL_DATABASE: place
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_HOST: '%'
+    ports:
+      - "3306:3306"
+    restart: on-failure
+
+  app:
+    restart: on-failure
+    build: ./app
+    working_dir: /app
+    volumes:
+      - ./app:/app
+      - ~/.m2:/root/.m2
+    expose:
+      - "8080"
+    ports:
+    - "8080:8080"
+    command: mvn clean spring-boot:run
+    depends_on:
+      - hk-mysql

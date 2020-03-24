@@ -18,7 +18,7 @@ public class Validator {
 	
 	public static Object validate(Object obj) throws ValidatorException {
 		if(isNull(obj)) {
-			throw new ValidatorException("Collection cannot be null");
+			throw new ValidatorException("Object cannot be null");
 		}
 		return obj;
 	}

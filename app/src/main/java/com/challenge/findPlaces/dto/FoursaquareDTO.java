@@ -6,10 +6,4 @@ import lombok.Data;
 public class FoursaquareDTO {
 
 	private ResponseDTO response;
-
-	private FoursaquareDTO() {
-	};
-	
-	
-
 }

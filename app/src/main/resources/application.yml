@@ -3,14 +3,16 @@ spring:
     active:
     - prod
   flyway:
-    enabled: false
-    url: jdbc:mysql://localhost:3306/place?useSSL=false&useTimezone=true&serverTimezone=UTC&allowPublicKeyRetrieval=true
-    user: admin
-    password: 12345678
+    enabled: true
+    url: jdbc:mysql://hk-mysql:3306/place?useSSL=false
+#    url: jdbc:mysql://localhost:3306/place?useSSL=false&useTimezone=true&serverTimezone=UTC&allowPublicKeyRetrieval=true
+#    jdbc:mysql://hk-mysql:3306/place?useSSL=false
+    user: root
+    password: root
     locations:
       - classpath:db/migration/mysql
     schemas:
-      - dili
+      - place
   jpa:
     hibernate:
       ddl-auto: none
@@ -20,9 +22,9 @@ spring:
       hibernate:
         format_sql: true
   datasource:
-    url: jdbc:mysql://localhost:3306/place?useSSL=false&useTimezone=true&serverTimezone=UTC&allowPublicKeyRetrieval=true
-    username: admin
-    password: 12345678
+    url: jdbc:mysql://hk-mysql:3306/place?useSSL=false
+    username: root
+    password: root
     driver-class-name: com.mysql.jdbc.Driver
     
 foursquare:
@@ -30,9 +32,3 @@ foursquare:
   secret: TIXAYKTY4NILY0W5TAY2IU4PK4XHG4Q2J5ZGSPLLCPQL0D4Y
   version: 20180323
   
-
----
-spring:
-  profiles:
-    active:
-    - test
